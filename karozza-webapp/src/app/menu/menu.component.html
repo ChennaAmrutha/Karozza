@@ -1,0 +1,20 @@
+<!--<div id="navbar"  class="navbar-collapse collapse navbar-collapse-custom">
+  <ul class="nav navbar-nav nav_menu full-width">
+      <li *ngFor="let menuOption of menuOptions" class="nav_menu" routerLinkActive="active">
+<a>{{menuOption.item}}</a>
+      </li>
+  </ul>
+</div>
+-->
+<div *ngIf="showNavbar == true ; then menubar else header"></div>
+<ng-template #menubar>
+<div  style="background-image:url('logo.jpg');color:red">kk
+<ul class="nav nav-pills">
+    <li *ngFor="let menuOption of menuOptions">
+        <a routerLink='{{menuOption.routerPath}}'> {{menuOption.item}}</a>
+    </li>
+</ul>
+</div>
+</ng-template>
+
+<ng-template #header>Header</ng-template>
