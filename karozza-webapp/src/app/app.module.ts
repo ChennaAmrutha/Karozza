@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
 import { UpdateAddressComponent } from './update-address/update-address.component';
+import { SampleFormComponent } from './sample-form/sample-form.component';
 
 const appRoutes : Routes = [ 
   {path : '',        component : LoginComponent},
@@ -55,7 +56,8 @@ const appRoutes1 : Routes = [{path : '',        component : LoginComponent},
     MenuComponent,
     FooterComponent,
     DetailsComponent,
-    UpdateAddressComponent
+    UpdateAddressComponent,
+    SampleFormComponent
   ],
   imports : [
     BrowserModule,

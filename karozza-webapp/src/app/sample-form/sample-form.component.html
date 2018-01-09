@@ -1,0 +1,39 @@
+<form  [formGroup]="sampleForm">
+  <div class="form-group row">
+      <label for="usr" class="col-sm-1">Name:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="usr" formControlName="name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="pwd" class="col-sm-1">Password:</label>
+      <div class="col-sm-6">
+      <input type="password" class="form-control" id="pwd" formControlName = "password">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="comment" class="col-sm-1">Comment:</label>
+      <div class="col-sm-6">
+      <textarea class="form-control" rows="5" id="comment" formControlName = "comment"></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="autogroup" class="col-sm-1">AutoGroup</label>
+      <div class= "col-sm-6">
+        <input type="checkbox">
+      </div>
+     
+    </div>
+    <div class="form-group row" >
+      <label for="sel1" class="col-sm-1">Select list (select one):</label>
+      <div class="col-sm-6">
+      <select class="form-control" id="sel1" formControlName = "sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+    </div>
+    <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" />
+  </form>
