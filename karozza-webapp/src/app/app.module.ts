@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
 import { UpdateAddressComponent } from './update-address/update-address.component';
 import { SampleFormComponent } from './sample-form/sample-form.component';
+import { DataService } from './_services/share.service';
 
 const appRoutes : Routes = [ 
   {path : '',        component : LoginComponent},
@@ -65,7 +66,18 @@ const appRoutes1 : Routes = [{path : '',        component : LoginComponent},
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers : [],
+  providers : [DataService],
   bootstrap : [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  loggedIn:boolean = false;
+  constructor(private data: DataService) { }
+  ngOnInit() {
+    this.data.currentStatus.subscribe(message => this.loggedIn = message)
+  }
+ /*showMenu($event){
+    alert("lks");
+    this.loggedIn = $event;
+    alert(this.loggedIn);
+  }*/
+ }

@@ -10,8 +10,10 @@
 <ng-template #menubar>
 <div  style="background-image:url('logo.jpg');color:red">kk
 <ul class="nav nav-pills">
-    <li *ngFor="let menuOption of menuOptions">
-        <a routerLink='{{menuOption.routerPath}}'> {{menuOption.item}}</a>
+    <li *ngFor="let userM of userMenu">
+
+        <a routerLink='{{userM.routerPath}}'> {{userM.item}}</a>
+
     </li>
 </ul>
 </div>
