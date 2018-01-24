@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuOptions } from '../Models/menu';
-import { ConstantService } from '../_services/constant.service';
+
 import { User } from '../Models/user';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -10,13 +11,17 @@ import { User } from '../Models/user';
 export class MenuComponent implements OnInit {
    menuOptions;userMenu;userRole;
    showNavbar : boolean;
-  constructor(private  constantservice : ConstantService) { 
-    this.showNavbar =  this.constantservice.showNavbar;
+  constructor(private dataService : DataService) { 
   }
   ngOnInit() {
-    this.userRole = 2;
+   this.userRole =  this.dataService.getUserRole();
+   console.log(this.userRole+"jd");
+
     this.menuOptions = new MenuOptions().menu;
-    console.log("dfaf"+new User().getRole());
-    this.userMenu = this.menuOptions.filter(x=>((x.role).indexOf(this.userRole)!==-1))
+    console.log(this.menuOptions);
+   // console.log("dfaf"+new User().getRole());
+    this.userMenu = this.menuOptions[this.userRole];
+    console.log(this.userMenu);
+    
   }
 }

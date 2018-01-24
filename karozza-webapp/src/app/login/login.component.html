@@ -1,5 +1,5 @@
 <form novalidate [formGroup]="user" (ngSubmit) = "onSubmit(user)">
-  <div class="form-group input-group col-xs-4">
+  <div class="form-group input-group ">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user  col-sm-1 col-sm-offset-1"></i></span>
     <input type="text" class="form-control" formControlName = "userid" placeholder="UserID"/>
     <div  class="error"
@@ -7,7 +7,7 @@
       Userid is required
     </div>
   </div>
-  <div class="form-group input-group col-xs-4">
+  <div class="form-group input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock  col-sm-1 col-sm-offset-1"></i></span>
       <input type="password" class="form-control" formControlName = "password"  placeholder="Password"/>
       <div class="error" *ngIf = "user.get('password').touched">

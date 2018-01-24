@@ -1,13 +1,22 @@
 export class MenuOptions {
-
-
-menu = [
-    {"item":"Update Address",routerPath:"updateAddress",role:[0,1,2]},
-    {"item":"Cab Service",routerPath:"",role:[0,1,2]},
-    {"item":"Groups",routerPath:"",role:[2]},
-    {"item":"Users",routerPath:"",role:[2]},
-    {"item":"Config",routerPath:"",role:[2]},
-    {"item":"Cab Request",routerPath:"",role:[2]}
-]
-
+menu = {
+   userMenu: [ 
+        {"item":"Update Address",routerPath:"updateAddress",
+         "submenu":[{"item":"item1"},{"item":"item2"}]
+        },
+        {"item":"Cab Service",routerPath:""}
+            ],
+    manager : [ 
+        {"item":"Update Address",routerPath:"updateAddress"},
+        {"item":"Cab Service",routerPath:""}
+             ],
+    Admin : [
+        {"item":"Update Address",routerPath:"updateAddress"},
+        {"item":"Cab Service",routerPath:""},
+        {"item":"Groups",routerPath:""},
+        {"item":"Users",routerPath:""},
+        {"item":"Config",routerPath:""},
+        {"item":"Cab Request",routerPath:""}
+    ]  
+}
 }
